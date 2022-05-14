@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
+
+
 @Repository
-public interface ConditionDAO extends JpaRepository<Condition, Long> {
+public interface ConditionRepository extends JpaRepository<Condition, Long> {
 }
