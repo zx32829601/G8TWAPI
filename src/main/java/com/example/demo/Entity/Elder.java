@@ -14,8 +14,8 @@ import javax.persistence.*;
 @Table(name = "Elder")
 public class Elder {
     @Id
-    @Column(name = "Elderid", nullable = false)
-    private Long Elderid;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "age")
     private int age;
@@ -27,7 +27,7 @@ public class Elder {
     private String precondition;
 
     @OneToOne
-    @JoinColumn(name = "Guardianid")
+    @JoinColumn(name = "Guardian")
     private Guardian guardian;
 
 

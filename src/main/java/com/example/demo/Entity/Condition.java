@@ -41,7 +41,7 @@ public class Condition {
     private String state;
 
     @OneToOne
-    @JoinColumn(name = "Elderid")
+    @JoinColumn(name = "Elder")
     private Elder elder;
 
 

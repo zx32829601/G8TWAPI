@@ -39,7 +39,9 @@ public class ProductController2 {
         }
     }
 
+
     @GetMapping("/products")
+
     public ResponseEntity<List<Product>> getProducts(@RequestParam(value = "keyword", defaultValue = "") String name) {
         List<Product> products = productDB.stream()
                 .filter(p -> p.getName().toUpperCase().contains(name.toUpperCase()))
