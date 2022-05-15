@@ -1,14 +1,11 @@
-package Controller;
+package com.example.demo.Controller;
 
-import Entity.Product;
-import org.springframework.http.HttpStatus;
+import com.example.demo.Entity.Product;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.annotation.PostConstruct;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -43,8 +40,7 @@ public class ProductController2 {
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts(
-            @RequestParam(value = "keyword", defaultValue = "") String name) {
+    public ResponseEntity<List<Product>> getProducts(@RequestParam(value = "keyword", defaultValue = "") String name) {
         List<Product> products = productDB.stream()
                 .filter(p -> p.getName().toUpperCase().contains(name.toUpperCase()))
                 .collect(Collectors.toList());
@@ -52,28 +48,28 @@ public class ProductController2 {
         return ResponseEntity.ok().body(products);
     }
 
-    @RequestMapping("/products")
-    public ResponseEntity<Product> createProduct(@RequestBody Product request) {
-        boolean isIdDuplicated = productDB.stream()
-                .anyMatch(p -> p.getId().equals(request.getId()));
-        if (isIdDuplicated) {
-            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
-        }
-
-        Product product = new Product();
-        product.setId(request.getId());
-        product.setName(request.getName());
-        product.setPrice(request.getPrice());
-        productDB.add(product);
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(product.getId())
-                .toUri();
-
-        return ResponseEntity.created(location).body(product);
-    }
+//    @RequestMapping("/products")
+//    public ResponseEntity<Product> createProduct(@RequestBody Product request) {
+//        boolean isIdDuplicated = productDB.stream()
+//                .anyMatch(p -> p.getId().equals(request.getId()));
+//        if (isIdDuplicated) {
+//            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
+//        }
+//
+//        Product product = new Product();
+//        product.setId(request.getId());
+//        product.setName(request.getName());
+//        product.setPrice(request.getPrice());
+//        productDB.add(product);
+//
+//        URI location = ServletUriComponentsBuilder
+//                .fromCurrentRequest()
+//                .path("/{id}")
+//                .buildAndExpand(product.getId())
+//                .toUri();
+//
+//        return ResponseEntity.created(location).body(product);
+//    }
 
 
 }

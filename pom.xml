@@ -16,16 +16,104 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+    <!--    <dependencies>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.projectlombok</groupId>-->
+    <!--            <artifactId>lombok</artifactId>-->
+    <!--            <version>1.18.24</version>-->
+    <!--            <scope>provided</scope>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-web</artifactId>-->
+    <!--        </dependency>-->
+
+    <!--        <dependency>-->
+    <!--            <groupId>mysql</groupId>-->
+    <!--            <artifactId>mysql-connector-java</artifactId>-->
+    <!--            <scope>runtime</scope>-->
+    <!--        </dependency>-->
+
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-test</artifactId>-->
+    <!--            <scope>test</scope>-->
+    <!--            <exclusions>-->
+    <!--                <exclusion>-->
+    <!--                    <groupId>org.junit.vintage</groupId>-->
+    <!--                    <artifactId>junit-vintage-engine</artifactId>-->
+    <!--                </exclusion>-->
+    <!--            </exclusions>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.assertj</groupId>-->
+    <!--            <artifactId>assertj-core</artifactId>-->
+    <!--            <version>3.21.0</version>-->
+    <!--            <scope>compile</scope>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.projectlombok</groupId>-->
+    <!--            <artifactId>lombok</artifactId>-->
+    <!--            <version>RELEASE</version>-->
+    <!--            <scope>compile</scope>-->
+    <!--        </dependency>-->
+    <!--                <dependency>-->
+    <!--                    <groupId>jakarta.validation</groupId>-->
+    <!--                    <artifactId>jakarta.validation-api</artifactId>-->
+    <!--                    <version>2.0.1</version>-->
+    <!--                </dependency>-->
+    <!--                <dependency>-->
+    <!--                    <groupId>org.hibernate.validator</groupId>-->
+    <!--                    <artifactId>hibernate-validator</artifactId>-->
+    <!--                    <version>6.0.18.Final</version>-->
+    <!--                </dependency>-->
+    <!--                <dependency>-->
+    <!--                    <groupId>org.springframework.security</groupId>-->
+    <!--                    <artifactId>spring-security-core</artifactId>-->
+    <!--                    <version>5.2.1.RELEASE</version>-->
+    <!--                </dependency>-->
+    <!--                <dependency>-->
+    <!--                    <groupId>org.springframework.security</groupId>-->
+    <!--                    <artifactId>spring-security-config</artifactId>-->
+    <!--                    <version>5.2.1.RELEASE</version>-->
+    <!--                </dependency>-->
+    <!--                <dependency>-->
+    <!--                    <groupId>org.springframework.security</groupId>-->
+    <!--                    <artifactId>spring-security-web</artifactId>-->
+    <!--                    <version>5.2.1.RELEASE</version>-->
+    <!--                </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>io.springfox</groupId>-->
+    <!--            <artifactId>springfox-boot-starter</artifactId>-->
+    <!--            <version>3.0.0</version>-->
+    <!--        </dependency>-->
+    <!--                <dependency>-->
+    <!--                    <groupId>io.springfox</groupId>-->
+    <!--                    <artifactId>springfox-oas</artifactId>-->
+    <!--                    <version>3.0.0</version>-->
+    <!--                </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-jdbc</artifactId>-->
+    <!--        </dependency>-->
+    <!--    </dependencies>-->
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
-            <scope>provided</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,71 +123,42 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!-- For DataBase connection -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
+        <!-- For DataBase connection -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+        <!-- For jpa -->
         <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.21.0</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
+            <version>1.18.22</version>
+            <scope>provided</scope>
         </dependency>
+
+        <!--		Swagger-->
         <!--        <dependency>-->
-        <!--            <groupId>jakarta.validation</groupId>-->
-        <!--            <artifactId>jakarta.validation-api</artifactId>-->
-        <!--            <version>2.0.1</version>-->
+        <!--            <groupId>io.springfox</groupId>-->
+        <!--            <artifactId>springfox-boot-starter</artifactId>-->
+        <!--            <version>3.0.0</version>-->
         <!--        </dependency>-->
         <!--        <dependency>-->
-        <!--            <groupId>org.hibernate.validator</groupId>-->
-        <!--            <artifactId>hibernate-validator</artifactId>-->
-        <!--            <version>6.0.18.Final</version>-->
+        <!--            <groupId>io.springfox</groupId>-->
+        <!--            <artifactId>springfox-oas</artifactId>-->
+        <!--            <version>3.0.0</version>-->
         <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.security</groupId>-->
-        <!--            <artifactId>spring-security-core</artifactId>-->
-        <!--            <version>5.2.1.RELEASE</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.security</groupId>-->
-        <!--            <artifactId>spring-security-config</artifactId>-->
-        <!--            <version>5.2.1.RELEASE</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.security</groupId>-->
-        <!--            <artifactId>spring-security-web</artifactId>-->
-        <!--            <version>5.2.1.RELEASE</version>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-oas</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+        <!--		Swagger-->
     </dependencies>
 
     <build>

@@ -1,9 +1,9 @@
-package sevice;
+package com.example.demo.sevice;
 
-import Entity.Condition;
+import com.example.demo.Entity.Condition;
+import com.example.demo.repository.ConditionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ConditionRepository;
 
 import java.util.ArrayList;
 import java.util.List;
