@@ -27,7 +27,7 @@ public class Elder {
     private String precondition;
 
     @OneToOne
-    @JoinColumn(name = "Guardianid", referencedColumnName = "id")
+    @JoinColumn(name = "Guardianid")
     private Guardian guardian;
 
 

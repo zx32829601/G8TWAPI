@@ -12,7 +12,7 @@ import java.util.List;
 public class ConditionService {
 
     @Autowired
-    private ConditionRepository conditionDAO;
+    private ConditionRepository conditionRepository;
 
     public void creatCondition() {
 
@@ -24,7 +24,7 @@ public class ConditionService {
 
     public List<Condition> findAll() {
         List<Condition> conditions = new ArrayList<Condition>();
-        conditions.addAll(conditionDAO.findAll());
+        conditions.addAll(conditionRepository.findAll());
         return conditions;
 
     }
