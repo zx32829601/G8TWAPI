@@ -19,7 +19,7 @@ public class Condition {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @CreationTimestamp//Use Create time
     @Column(name = "time_stamp")
@@ -27,31 +27,30 @@ public class Condition {
     private Timestamp time_stamp;
 
 
-    @Column(name = "heartrhythm")
+    @Column(name = "heart_rhythm")
     private int heartrhythm;
 
     @Column(name = "bloody_oxy")
-    private float bloody_oxy;
-    @Column(name = "longgps")
+    private float bloodyoxy;
+    @Column(name = "long_gps")
     private double longgps;
-    @Column(name = "latigps")
+    @Column(name = "lati_gps")
     private double latigps;
 
-    @Column(name = "state")
-    private String state;
+    @Column(name = "elder_state")
+    private String elder_state;
 
     @OneToOne
-    @JoinColumn(name = "Elder")
+    @JoinColumn(name = "elder_id")
     private Elder elder;
 
 
-    Condition(int hr, float bo, double lng, double lat, String st) {
-        this.heartrhythm = hr;
-        this.bloody_oxy = bo;
-        this.longgps = lng;
-        this.latigps = lat;
-        this.state = st;
+    public Condition(int heartrhythm, float bloody_oxy, double longgps, double latigps, String state, Elder elder) {
+        this.heartrhythm = heartrhythm;
+        this.bloodyoxy = bloody_oxy;
+        this.longgps = longgps;
+        this.latigps = latigps;
+        this.elder_state = state;
+        this.elder = elder;
     }
-
-
 }

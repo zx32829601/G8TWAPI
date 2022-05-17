@@ -13,9 +13,14 @@ import javax.persistence.*;
 @Builder
 @Table(name = "Elder")
 public class Elder {
+
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "ID_number")
+    private String ID_number;
 
     @Column(name = "age")
     private int age;
@@ -23,12 +28,22 @@ public class Elder {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "birth")
+    private String birth;
+
     @Column(name = "precondition")
     private String precondition;
 
     @OneToOne
-    @JoinColumn(name = "Guardian")
+    @JoinColumn(name = "guardian_id")
     private Guardian guardian;
 
-
+    public Elder(String in, int age, String name, String bi, String precondition, Guardian guardian) {
+        this.ID_number = in;
+        this.age = age;
+        this.name = name;
+        this.precondition = precondition;
+        this.guardian = guardian;
+        this.birth = bi;
+    }
 }

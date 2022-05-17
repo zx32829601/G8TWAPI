@@ -16,7 +16,8 @@ import java.sql.Blob;
 @AllArgsConstructor
 public class Electrocardiography {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "graph")
@@ -26,4 +27,8 @@ public class Electrocardiography {
     @JoinColumn(name = "elder")
     private Elder elder;
 
+    public Electrocardiography(Blob graph, Elder elder) {
+        this.graph = graph;
+        this.elder = elder;
+    }
 }

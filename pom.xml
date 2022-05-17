@@ -105,6 +105,8 @@
     <!--            <artifactId>spring-boot-starter-jdbc</artifactId>-->
     <!--        </dependency>-->
     <!--    </dependencies>-->
+
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -153,18 +155,21 @@
             <version>2.3.0</version>
         </dependency>
 
-        <!--		Swagger-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.springfox</groupId>-->
-        <!--            <artifactId>springfox-boot-starter</artifactId>-->
-        <!--            <version>3.0.0</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.springfox</groupId>-->
-        <!--            <artifactId>springfox-oas</artifactId>-->
-        <!--            <version>3.0.0</version>-->
-        <!--        </dependency>-->
-        <!--		Swagger-->
+
+        <!--        Swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-oas</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!--        Swagger-->
+
     </dependencies>
 
     <build>

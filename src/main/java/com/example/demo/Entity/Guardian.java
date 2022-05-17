@@ -14,17 +14,21 @@ import javax.persistence.*;
 @Table(name = "Guardian")
 public class Guardian {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "Telephonenumber")
-    private String Telephonenumber;
 
-    @OneToOne
-    @JoinColumn(name = "Elderid")
-    private Elder elder;
+    @Column(name = "telephone_number")
+    private String telephone_number;
 
+
+    public Guardian(String name, String telephone_number) {
+        this.name = name;
+        this.telephone_number = telephone_number;
+
+    }
 }
