@@ -24,7 +24,7 @@ public class ElderController {
     public ResponseEntity<Elder> create_elder(@RequestBody ElderDTO elderDTO) {
         Long guardianId = elderDTO.getGuardianID();
         Optional<Guardian> _guardian = guardianRepository.findById(guardianId);
-        Elder elder = elderrepository.save(new Elder(elderDTO.getID_number(), elderDTO.getAge(), elderDTO.getName(), elderDTO.getBirth(), elderDTO.getPrecondition(), _guardian.get()));
+        Elder elder = elderrepository.save(new Elder(elderDTO.getID_number(), elderDTO.getAge(), elderDTO.getName(), elderDTO.getBirth(), elderDTO.getPrecondition(), elderDTO.getAddress(), _guardian.get()));
         return new ResponseEntity<>(elder, HttpStatus.OK);
 
     }

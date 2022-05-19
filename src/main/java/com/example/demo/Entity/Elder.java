@@ -34,16 +34,20 @@ public class Elder {
     @Column(name = "precondition")
     private String precondition;
 
+    @Column(name = "address")
+    private String address;
+
     @OneToOne
     @JoinColumn(name = "guardian_id")
     private Guardian guardian;
 
-    public Elder(String in, int age, String name, String bi, String precondition, Guardian guardian) {
+    public Elder(String in, int age, String name, String bi, String precondition, String add, Guardian guardian) {
         this.ID_number = in;
         this.age = age;
         this.name = name;
         this.precondition = precondition;
         this.guardian = guardian;
         this.birth = bi;
+        this.address = add;
     }
 }

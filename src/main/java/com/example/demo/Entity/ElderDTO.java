@@ -14,4 +14,5 @@ public class ElderDTO {
     private String precondition;
     private Long guardianID;
     private String birth;
+    private String address;
 }

@@ -40,6 +40,10 @@ public class Condition {
     @Column(name = "elder_state")
     private String elder_state;
 
+    @Column(columnDefinition = "boolean default false")
+    private boolean notify_accept;
+
+
     @OneToOne
     @JoinColumn(name = "elder_id")
     private Elder elder;
@@ -52,5 +56,6 @@ public class Condition {
         this.latigps = latigps;
         this.elder_state = state;
         this.elder = elder;
+
     }
 }
