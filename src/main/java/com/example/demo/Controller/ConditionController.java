@@ -57,6 +57,13 @@ public class ConditionController {
             condition_data = new Condition();
         }
         return condition_data;
+
+    }
+
+    @GetMapping("/gettop10/{id}")
+    public ResponseEntity<List<Condition>> get_top10condition(@PathVariable("id") long id) {
+        List<Condition> conditionList = conditionService.get_top10condition(id);
+        return ResponseEntity.ok(conditionList);
     }
 }
 

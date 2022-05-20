@@ -60,4 +60,16 @@ public class ConditionService {
         return conditionRepository.save(condition.get());
 
     }
+
+    public List<Condition> get_top10condition(long id) {
+        Optional<Elder> elder_data = elderrepository.findById(id);
+        List<Condition> condition_data;
+        if (elder_data.isPresent()) {
+            condition_data = conditionRepository.findFirst10ByElder(elder_data.get());
+        } else {
+            condition_data = new ArrayList<Condition>();
+        }
+        return condition_data;
+    }
+
 }
