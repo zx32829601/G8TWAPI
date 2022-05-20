@@ -2,9 +2,9 @@ package com.example.demo.Controller;
 
 import com.example.demo.Entity.Elder;
 import com.example.demo.Entity.ElderDTO;
-import com.example.demo.Entity.Guardian;
 import com.example.demo.repository.Elderrepository;
 import com.example.demo.repository.GuardianRepository;
+import com.example.demo.sevice.Elderservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +20,13 @@ public class ElderController {
     @Autowired
     GuardianRepository guardianRepository;
 
+    @Autowired
+    Elderservice elderservice;
+
     @PostMapping("/create")
     public ResponseEntity<Elder> create_elder(@RequestBody ElderDTO elderDTO) {
-        Long guardianId = elderDTO.getGuardianID();
-        Optional<Guardian> _guardian = guardianRepository.findById(guardianId);
-        Elder elder = elderrepository.save(new Elder(elderDTO.getID_number(), elderDTO.getAge(), elderDTO.getName(), elderDTO.getBirth(), elderDTO.getPrecondition(), elderDTO.getAddress(), _guardian.get()));
+        Elder elder = elderservice.createElder(elderDTO);
         return new ResponseEntity<>(elder, HttpStatus.OK);
-
     }
 
     @GetMapping("/get/{id}")

@@ -15,4 +15,5 @@ public interface ConditionRepository extends JpaRepository<Condition, Long> {
     List<Condition> findByElder(Elder elder);
 
 
+    Condition findTopByOrderByIdDesc();
 }
