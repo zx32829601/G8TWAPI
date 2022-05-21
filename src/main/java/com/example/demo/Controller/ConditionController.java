@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Entity.Condition;
 import com.example.demo.Entity.ConditionDTO;
+import com.example.demo.Entity.ConditionDTO2;
 import com.example.demo.Entity.Elder;
 import com.example.demo.repository.ConditionRepository;
 import com.example.demo.repository.Elderrepository;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,5 +67,19 @@ public class ConditionController {
         List<Condition> conditionList = conditionService.get_top10condition(id);
         return ResponseEntity.ok(conditionList);
     }
+
+    @PostMapping("/getbytime")
+    public ResponseEntity<List<Condition>> getbytime_condition(@RequestBody ConditionDTO2 conditionDTO2) {
+        Optional<Elder> elder_data = elderrepository.findById(conditionDTO2.getElderID());
+        List<Condition> condition_data;
+        if (elder_data.isPresent()) {
+            condition_data = conditionRepository.findByElderAndTimestampBetween(conditionDTO2.getElderID(), conditionDTO2.getData(), conditionDTO2.getAfter());
+            System.out.println(condition_data.toString());
+        } else {
+            condition_data = new ArrayList<Condition>();
+        }
+        return ResponseEntity.ok(condition_data);
+    }
+
 }
 
