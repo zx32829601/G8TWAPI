@@ -19,7 +19,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/Condition")
 public class ConditionController {
-    private int n;
+    
     @Autowired
     ConditionRepository conditionRepository;
 

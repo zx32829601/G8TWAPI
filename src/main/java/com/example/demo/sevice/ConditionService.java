@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 public class ConditionService {
-    private int n;
+    private int notify_frequency;
     @Autowired
     private ConditionRepository conditionRepository;
 
@@ -28,10 +28,10 @@ public class ConditionService {
         if (request.getHeartrhythm() < 60 || request.getHeartrhythm() > 100) {
             state = "abnormal";
 
-            n += 10;
-        } else if (n != 0) {
+            notify_frequency += 10;
+        } else if (notify_frequency != 0) {
             state = "normal but have precondition";
-            n -= 1;
+            notify_frequency -= 1;
         }
         Long elderId = request.getElderID();
         Optional<Elder> _elder = elderrepository.findById(elderId);
@@ -56,7 +56,7 @@ public class ConditionService {
     public Condition changenotify(long id) {
         Optional<Condition> condition = conditionRepository.findById(id);
         condition.get().setNotify_accept(true);
-        n = 0;
+        notify_frequency = 0;
         return conditionRepository.save(condition.get());
 
     }
