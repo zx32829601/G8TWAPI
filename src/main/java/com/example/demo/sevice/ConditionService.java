@@ -25,10 +25,10 @@ public class ConditionService {
     //createCondition
     public Condition createCondition(ConditionDTO request) {
         String state = "normal";
-        if (request.getHeartrhythm() < 60 || request.getHeartrhythm() > 100) {
+        if (request.getHeartrhythm() < 60 || request.getHeartrhythm() >= 100) {
             state = "abnormal";
 
-            notify_frequency += 10;
+            notify_frequency = 10;
         } else if (notify_frequency != 0) {
             state = "normal but have precondition";
             notify_frequency -= 1;
